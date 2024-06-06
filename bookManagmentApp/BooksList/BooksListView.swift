@@ -8,8 +8,35 @@
 import SwiftUI
 
 struct BooksListView: View {
+    @ObservedObject var viewModel = BooksListViewModel()
+
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        NavigationView{
+            // List(viewModel.books){ book in 
+            //     NavigationLink(destination: BookView()){
+            //         Text("SwiftUI for Beginners")
+            //             .font(.title)
+            //             .fontWeight(.bold)
+            //             .foregroundColor(.primary)
+
+            //         Text("by John Appleseed")
+            //             .font(.subheadline)
+            //             .foregroundColor(.secondary)
+            //     }.navigationTitle("Book")
+            // }
+            List{ 
+                NavigationLink(destination: BookView()){
+                    Text("SwiftUI for Beginners")
+                        .font(.title)
+                        .fontWeight(.bold)
+                        .foregroundColor(.primary)
+
+                    Text("by John Appleseed")
+                        .font(.subheadline)
+                        .foregroundColor(.secondary)
+                }.navigationTitle("Book")
+            }
+        }
     }
 }
 

@@ -6,3 +6,15 @@
 //
 
 import Foundation
+
+class BookViewModel : ObservableObject {
+    @Published var book: String = ""
+
+    func editBook(){
+
+    }
+
+    func deleteBook(){
+        
+    }
+}

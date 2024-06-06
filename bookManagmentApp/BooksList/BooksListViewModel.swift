@@ -6,3 +6,7 @@
 //
 
 import Foundation
+
+class BooksListViewModel: ObservableObject {
+    @Published var books: [String] = []
+}
