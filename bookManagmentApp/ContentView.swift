@@ -35,6 +35,11 @@ struct ContentView: View {
                     } label: {
                         Text("Add library")
                     }
+                    NavigationLink{
+                        AddAuthorView()
+                    } label: {
+                        Text("Add author")
+                    }
                 }
                 List {
                     ForEach(items) { item in

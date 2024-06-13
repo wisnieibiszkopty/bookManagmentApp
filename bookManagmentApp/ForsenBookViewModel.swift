@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import CoreData
 
 class ForsenBookViewModel: ObservableObject {
     @Published var title: String = ""
@@ -14,9 +15,11 @@ class ForsenBookViewModel: ObservableObject {
     @Published var selectedLibrary: String = ""
     @Published var libraries = ["Biblioteka Miejska", "Biblioteka Uniwersytecka", "Biblioteka Szkolna"]
     
-    func saveBook() {
-//        let newBook = Book(title: title, description: description, returnDate: returnDate, library: selectedLibrary)
-//        // Tu dodaj logikę zapisu książki, np. do bazy danych
-//        print("Zapisano książkę: \(newBook)")
+    func saveBook(context: NSManagedObjectContext) {
+        let newBook = Book(context: viewContext)
+        newBook.title = title
+        newBook.genre =
+        
+        context.save()
     }
 }

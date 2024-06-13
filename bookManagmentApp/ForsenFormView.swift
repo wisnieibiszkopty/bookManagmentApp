@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct ForsenFormView: View {
+    @Environment(\.managedObjectContext) private var viewContext
     @ObservedObject var viewModel = ForsenBookViewModel()
         
     var body: some View {
