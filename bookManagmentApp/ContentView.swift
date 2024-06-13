@@ -16,6 +16,11 @@ struct ContentView: View {
         animation: .default)
     private var items: FetchedResults<Book>
 
+    @FetchRequest(
+        sortDescriptors: [NSSortDescriptor(keyPath: \Library.name, ascending: true)],
+        animation: .default)
+    private var libraries: FetchedResults<Library>
+    
     var body: some View {
         NavigationView {
             VStack{
@@ -56,7 +61,12 @@ struct ContentView: View {
                         }
                     }
                 }
-                Text("Select an item")
+                List {
+                    ForEach(libraries) { item in
+                        Text(item.name!)
+                    }
+                    .onDelete(perform: deleteItems)
+                }
             }
         }
     }
