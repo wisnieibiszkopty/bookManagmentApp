@@ -53,14 +53,12 @@ struct BookView: View {
                 Text("Library:")
                     .font(.footnote)
                     .foregroundColor(.secondary)
-                //Text("\(book.toLibrary!.name!) \(book.toLibrary!.address!)")
-//                if let library = book.toLibrary? {
-//                            List(library, id: \.self) { item in
-//                                Text(item)
-//                            }
-//                        } else {
-//                            Text("No items in the library")
-//                        }
+                List {
+                    ForEach(book.libraryArray) { item in
+                        Text(item.name!)
+                    }
+//                    .onDelete(perform: deleteItems)
+                }
             }
         }
         .padding()

@@ -22,6 +22,13 @@ extension Book {
     @NSManaged public var toAuthor: Author?
     @NSManaged public var toLibrary: NSSet?
 
+    public var libraryArray: [Library] {
+        let set = toLibrary as? Set<Library> ?? []
+        
+        return set.sorted {
+            $0.name! < $1.name!
+        }
+    }
 }
 
 // MARK: Generated accessors for toLibrary
