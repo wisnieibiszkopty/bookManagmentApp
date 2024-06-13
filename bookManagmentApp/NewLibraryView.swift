@@ -61,7 +61,7 @@ struct NewLibraryView: View {
                     saveLibrary()
                 }) {
                     Text("Zapisz")
-                        .foregroundColor(.white)
+                        .foregroundColor(.black)
                         .frame(maxWidth: .infinity)
                 }
                 .padding()

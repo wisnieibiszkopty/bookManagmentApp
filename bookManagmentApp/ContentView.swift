@@ -5,8 +5,6 @@
 //  Created by student on 04/06/2024.
 //
 
-// zanies klucz do 118
-
 import SwiftUI
 import CoreData
 
@@ -22,27 +20,45 @@ struct ContentView: View {
         sortDescriptors: [NSSortDescriptor(keyPath: \Library.name, ascending: true)],
         animation: .default)
     private var libraries: FetchedResults<Library>
-    
+
     var body: some View {
+
         NavigationView {
             VStack{
                 HStack{
                     NavigationLink{
                         ForsenFormView()
                     } label: {
-                        Text("Add book")
+                        Text("Add book ")
+                            .frame(width: UIScreen.main.bounds.width * 0.19)
+                            .padding()
+                            .background(Color.black)
+                            .foregroundColor(.white)
+                            .cornerRadius(10)
                     }
                     NavigationLink{
                         NewLibraryView()
                     } label: {
                         Text("Add library")
+                            .frame(width: UIScreen.main.bounds.width * 0.21)
+                            .padding()
+                            .background(Color.black)
+                            .foregroundColor(.white)
+                            .cornerRadius(10)
                     }
                     NavigationLink{
                         AddAuthorView()
                     } label: {
                         Text("Add author")
+                            .frame(width: UIScreen.main.bounds.width * 0.25)
+                            .padding()
+                            .background(Color.black)
+                            .foregroundColor(.white)
+                            .cornerRadius(10)
                     }
                 }
+                .padding()
+
                 List {
                     ForEach(items) { item in
                         NavigationLink {
@@ -53,24 +69,11 @@ struct ContentView: View {
                     }
                     .onDelete(perform: deleteItems)
                 }
-                .toolbar {
-                    ToolbarItem(placement: .navigationBarTrailing) {
-                        EditButton()
-                    }
-                    ToolbarItem {
-                        Button(action: addItem) {
-                            Label("Add Item", systemImage: "plus")
-                        }
-                    }
-                }
-                List {
-                    ForEach(libraries) { item in
-                        Text(item.name!)
-                    }
-                    .onDelete(perform: deleteItems)
-                }
             }
+            .frame(maxWidth: .infinity, maxHeight: .infinity)
+            .background(Color.indigo)
         }
+
     }
 
     private func addItem() {
