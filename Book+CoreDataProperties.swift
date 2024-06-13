@@ -18,6 +18,7 @@ extension Book {
 
     @NSManaged public var genre: String?
     @NSManaged public var title: String?
+    @NSManaged public var returnDate: Date?
     @NSManaged public var toAuthor: Author?
     @NSManaged public var toLibrary: NSSet?
 

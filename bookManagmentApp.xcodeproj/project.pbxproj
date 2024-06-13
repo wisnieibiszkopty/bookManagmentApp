@@ -25,6 +25,7 @@
 		3FE6D6CA2C1AD85F0012B1D0 /* ForsenForm in Resources */ = {isa = PBXBuildFile; fileRef = 3FE6D6C92C1AD85F0012B1D0 /* ForsenForm */; };
 		3FE6D6CC2C1AD8B10012B1D0 /* ForsenFormView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FE6D6CB2C1AD8B10012B1D0 /* ForsenFormView.swift */; };
 		3FE6D6CE2C1AD8B30012B1D0 /* ForsenBookViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FE6D6CD2C1AD8B30012B1D0 /* ForsenBookViewModel.swift */; };
+		3FE6D6D02C1AE13F0012B1D0 /* ToastView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FE6D6CF2C1AE13F0012B1D0 /* ToastView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -47,6 +48,7 @@
 		3FE6D6C92C1AD85F0012B1D0 /* ForsenForm */ = {isa = PBXFileReference; lastKnownFileType = folder; path = ForsenForm; sourceTree = "<group>"; };
 		3FE6D6CB2C1AD8B10012B1D0 /* ForsenFormView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForsenFormView.swift; sourceTree = "<group>"; };
 		3FE6D6CD2C1AD8B30012B1D0 /* ForsenBookViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForsenBookViewModel.swift; sourceTree = "<group>"; };
+		3FE6D6CF2C1AE13F0012B1D0 /* ToastView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToastView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,6 +99,7 @@
 				3FA63E012C0EE931004F58E2 /* bookManagmentApp.xcdatamodeld */,
 				3FA63DFC2C0EE931004F58E2 /* Preview Content */,
 				3FE6D6C32C1AD0B50012B1D0 /* BookView.swift */,
+				3FE6D6CF2C1AE13F0012B1D0 /* ToastView.swift */,
 			);
 			path = bookManagmentApp;
 			sourceTree = "<group>";
@@ -180,6 +183,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3FE6D6D02C1AE13F0012B1D0 /* ToastView.swift in Sources */,
 				3F6C25152C182CBF0028CA4A /* Book+CoreDataClass.swift in Sources */,
 				3FE6D6C72C1AD6F30012B1D0 /* NewLibraryView.swift in Sources */,
 				3FA63E002C0EE931004F58E2 /* Persistence.swift in Sources */,

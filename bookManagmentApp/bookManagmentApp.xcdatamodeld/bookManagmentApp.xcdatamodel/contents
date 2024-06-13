@@ -7,12 +7,15 @@
     </entity>
     <entity name="Book" representedClassName="Book" syncable="YES">
         <attribute name="genre" optional="YES" attributeType="String"/>
+        <attribute name="returnDate" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
         <attribute name="title" optional="YES" attributeType="String"/>
         <relationship name="toAuthor" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Author" inverseName="toBook" inverseEntity="Author"/>
         <relationship name="toLibrary" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Library" inverseName="toBook" inverseEntity="Library"/>
     </entity>
     <entity name="Library" representedClassName="Library" syncable="YES">
         <attribute name="address" optional="YES" attributeType="String"/>
+        <attribute name="latitude" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="longitude" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
         <attribute name="name" optional="YES" attributeType="String"/>
         <relationship name="toBook" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Book" inverseName="toLibrary" inverseEntity="Book"/>
     </entity>

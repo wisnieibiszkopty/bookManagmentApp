@@ -2,7 +2,7 @@
 //  Library+CoreDataProperties.swift
 //  bookManagmentApp
 //
-//  Created by student on 11/06/2024.
+//  Created by student on 13/06/2024.
 //
 //
 
@@ -16,8 +16,10 @@ extension Library {
         return NSFetchRequest<Library>(entityName: "Library")
     }
 
-    @NSManaged public var name: String?
     @NSManaged public var address: String?
+    @NSManaged public var name: String?
+    @NSManaged public var longitude: Double
+    @NSManaged public var latitude: Double
     @NSManaged public var toBook: NSSet?
 
 }
@@ -36,10 +38,6 @@ extension Library {
 
     @objc(removeToBook:)
     @NSManaged public func removeFromToBook(_ values: NSSet)
-    
-    public func toString() -> String {
-        return name! + " " + address!
-    }
 
 }
 
