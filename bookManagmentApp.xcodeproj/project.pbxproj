@@ -13,6 +13,7 @@
 		3F6C25182C182CBF0028CA4A /* Library+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F6C25122C182CBF0028CA4A /* Library+CoreDataProperties.swift */; };
 		3F6C25192C182CBF0028CA4A /* Author+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F6C25132C182CBF0028CA4A /* Author+CoreDataClass.swift */; };
 		3F6C251A2C182CBF0028CA4A /* Author+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F6C25142C182CBF0028CA4A /* Author+CoreDataProperties.swift */; };
+		3FA184DE2C1ADF8500BD07F7 /* AddAuthorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FA184DD2C1ADF8500BD07F7 /* AddAuthorView.swift */; };
 		3FA63DF72C0EE930004F58E2 /* bookManagmentAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FA63DF62C0EE930004F58E2 /* bookManagmentAppApp.swift */; };
 		3FA63DF92C0EE930004F58E2 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FA63DF82C0EE930004F58E2 /* ContentView.swift */; };
 		3FA63DFB2C0EE931004F58E2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3FA63DFA2C0EE931004F58E2 /* Assets.xcassets */; };
@@ -22,7 +23,6 @@
 		3FE6D6C42C1AD0B50012B1D0 /* BookView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FE6D6C32C1AD0B50012B1D0 /* BookView.swift */; };
 		3FE6D6C72C1AD6F30012B1D0 /* NewLibraryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FE6D6C52C1AD6F30012B1D0 /* NewLibraryView.swift */; };
 		3FE6D6C82C1AD6F30012B1D0 /* NewLibraryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FE6D6C62C1AD6F30012B1D0 /* NewLibraryViewModel.swift */; };
-		3FE6D6CA2C1AD85F0012B1D0 /* ForsenForm in Resources */ = {isa = PBXBuildFile; fileRef = 3FE6D6C92C1AD85F0012B1D0 /* ForsenForm */; };
 		3FE6D6CC2C1AD8B10012B1D0 /* ForsenFormView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FE6D6CB2C1AD8B10012B1D0 /* ForsenFormView.swift */; };
 		3FE6D6CE2C1AD8B30012B1D0 /* ForsenBookViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FE6D6CD2C1AD8B30012B1D0 /* ForsenBookViewModel.swift */; };
 /* End PBXBuildFile section */
@@ -34,6 +34,7 @@
 		3F6C25122C182CBF0028CA4A /* Library+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Library+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		3F6C25132C182CBF0028CA4A /* Author+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Author+CoreDataClass.swift"; sourceTree = "<group>"; };
 		3F6C25142C182CBF0028CA4A /* Author+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Author+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		3FA184DD2C1ADF8500BD07F7 /* AddAuthorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddAuthorView.swift; sourceTree = "<group>"; };
 		3FA63DF32C0EE930004F58E2 /* bookManagmentApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = bookManagmentApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3FA63DF62C0EE930004F58E2 /* bookManagmentAppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = bookManagmentAppApp.swift; sourceTree = "<group>"; };
 		3FA63DF82C0EE930004F58E2 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -44,7 +45,6 @@
 		3FE6D6C32C1AD0B50012B1D0 /* BookView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookView.swift; sourceTree = "<group>"; };
 		3FE6D6C52C1AD6F30012B1D0 /* NewLibraryView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewLibraryView.swift; sourceTree = "<group>"; };
 		3FE6D6C62C1AD6F30012B1D0 /* NewLibraryViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewLibraryViewModel.swift; sourceTree = "<group>"; };
-		3FE6D6C92C1AD85F0012B1D0 /* ForsenForm */ = {isa = PBXFileReference; lastKnownFileType = folder; path = ForsenForm; sourceTree = "<group>"; };
 		3FE6D6CB2C1AD8B10012B1D0 /* ForsenFormView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForsenFormView.swift; sourceTree = "<group>"; };
 		3FE6D6CD2C1AD8B30012B1D0 /* ForsenBookViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForsenBookViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -89,7 +89,6 @@
 				3FA63DF62C0EE930004F58E2 /* bookManagmentAppApp.swift */,
 				3FE6D6CD2C1AD8B30012B1D0 /* ForsenBookViewModel.swift */,
 				3FA63DF82C0EE930004F58E2 /* ContentView.swift */,
-				3FE6D6C92C1AD85F0012B1D0 /* ForsenForm */,
 				3FE6D6C52C1AD6F30012B1D0 /* NewLibraryView.swift */,
 				3FE6D6C62C1AD6F30012B1D0 /* NewLibraryViewModel.swift */,
 				3FA63DFA2C0EE931004F58E2 /* Assets.xcassets */,
@@ -97,6 +96,7 @@
 				3FA63E012C0EE931004F58E2 /* bookManagmentApp.xcdatamodeld */,
 				3FA63DFC2C0EE931004F58E2 /* Preview Content */,
 				3FE6D6C32C1AD0B50012B1D0 /* BookView.swift */,
+				3FA184DD2C1ADF8500BD07F7 /* AddAuthorView.swift */,
 			);
 			path = bookManagmentApp;
 			sourceTree = "<group>";
@@ -169,7 +169,6 @@
 			files = (
 				3FA63DFE2C0EE931004F58E2 /* Preview Assets.xcassets in Resources */,
 				3FA63DFB2C0EE931004F58E2 /* Assets.xcassets in Resources */,
-				3FE6D6CA2C1AD85F0012B1D0 /* ForsenForm in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -185,6 +184,7 @@
 				3FA63E002C0EE931004F58E2 /* Persistence.swift in Sources */,
 				3F6C25172C182CBF0028CA4A /* Library+CoreDataClass.swift in Sources */,
 				3F6C25162C182CBF0028CA4A /* Book+CoreDataProperties.swift in Sources */,
+				3FA184DE2C1ADF8500BD07F7 /* AddAuthorView.swift in Sources */,
 				3FE6D6CC2C1AD8B10012B1D0 /* ForsenFormView.swift in Sources */,
 				3FA63E032C0EE931004F58E2 /* bookManagmentApp.xcdatamodeld in Sources */,
 				3FA63DF92C0EE930004F58E2 /* ContentView.swift in Sources */,
