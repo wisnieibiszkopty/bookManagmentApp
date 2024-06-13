@@ -2,7 +2,7 @@
 //  Book+CoreDataProperties.swift
 //  bookManagmentApp
 //
-//  Created by student on 11/06/2024.
+//  Created by student on 13/06/2024.
 //
 //
 
@@ -16,8 +16,8 @@ extension Book {
         return NSFetchRequest<Book>(entityName: "Book")
     }
 
-    @NSManaged public var title: String?
     @NSManaged public var genre: String?
+    @NSManaged public var title: String?
     @NSManaged public var toAuthor: Author?
     @NSManaged public var toLibrary: NSSet?
 

@@ -36,6 +36,10 @@ extension Library {
 
     @objc(removeToBook:)
     @NSManaged public func removeFromToBook(_ values: NSSet)
+    
+    public func toString() -> String {
+        return name! + " " + address!
+    }
 
 }
 

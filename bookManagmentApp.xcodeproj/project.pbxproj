@@ -19,6 +19,7 @@
 		3FA63DFE2C0EE931004F58E2 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3FA63DFD2C0EE931004F58E2 /* Preview Assets.xcassets */; };
 		3FA63E002C0EE931004F58E2 /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FA63DFF2C0EE931004F58E2 /* Persistence.swift */; };
 		3FA63E032C0EE931004F58E2 /* bookManagmentApp.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 3FA63E012C0EE931004F58E2 /* bookManagmentApp.xcdatamodeld */; };
+		3FE6D6C42C1AD0B50012B1D0 /* BookView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FE6D6C32C1AD0B50012B1D0 /* BookView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -35,6 +36,7 @@
 		3FA63DFD2C0EE931004F58E2 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		3FA63DFF2C0EE931004F58E2 /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
 		3FA63E022C0EE931004F58E2 /* bookManagmentApp.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = bookManagmentApp.xcdatamodel; sourceTree = "<group>"; };
+		3FE6D6C32C1AD0B50012B1D0 /* BookView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,6 +81,7 @@
 				3FA63DFF2C0EE931004F58E2 /* Persistence.swift */,
 				3FA63E012C0EE931004F58E2 /* bookManagmentApp.xcdatamodeld */,
 				3FA63DFC2C0EE931004F58E2 /* Preview Content */,
+				3FE6D6C32C1AD0B50012B1D0 /* BookView.swift */,
 			);
 			path = bookManagmentApp;
 			sourceTree = "<group>";
@@ -170,6 +173,7 @@
 				3F6C25192C182CBF0028CA4A /* Author+CoreDataClass.swift in Sources */,
 				3F6C25182C182CBF0028CA4A /* Library+CoreDataProperties.swift in Sources */,
 				3F6C251A2C182CBF0028CA4A /* Author+CoreDataProperties.swift in Sources */,
+				3FE6D6C42C1AD0B50012B1D0 /* BookView.swift in Sources */,
 				3FA63DF72C0EE930004F58E2 /* bookManagmentAppApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
