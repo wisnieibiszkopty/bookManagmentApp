@@ -5,6 +5,8 @@
 //  Created by student on 04/06/2024.
 //
 
+// zanies klucz do 118
+
 import SwiftUI
 import CoreData
 
@@ -20,6 +22,10 @@ struct ContentView: View {
         sortDescriptors: [NSSortDescriptor(keyPath: \Library.name, ascending: true)],
         animation: .default)
     private var libraries: FetchedResults<Library>
+
+    @State private var libraryToDelete: Library?
+
+    @State var showAlert = false
 
     var body: some View {
 
@@ -69,6 +75,27 @@ struct ContentView: View {
                     }
                     .onDelete(perform: deleteItems)
                 }
+                List {
+                    ForEach(libraries) { item in
+                        Text(item.name!)
+                        .onLongPressGesture {
+                            self.libraryToDelete = item
+                            showAlert = true
+                        }
+                    }
+                }
+                .alert(isPresented: $showAlert){
+                    Alert(
+                        title: Text("Czy na pewno chcesz usunac biblioteke?"),
+                        primaryButton: .destructive(Text("Usuń"), action: {
+                            if let library = self.libraryToDelete {
+                                deleteLibrary(library)
+                            }
+                        }),
+                        secondaryButton: .cancel(Text("Anuluj"))
+                    )
+                    .onDelete(perform: deleteItems)
+                }
             }
             .frame(maxWidth: .infinity, maxHeight: .infinity)
             .background(Color.indigo)
@@ -84,8 +111,6 @@ struct ContentView: View {
             do {
                 try viewContext.save()
             } catch {
-                // Replace this implementation with code to handle the error appropriately.
-                // fatalError() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
                 let nsError = error as NSError
                 fatalError("Unresolved error \(nsError), \(nsError.userInfo)")
             }
@@ -99,12 +124,20 @@ struct ContentView: View {
             do {
                 try viewContext.save()
             } catch {
-                // Replace this implementation with code to handle the error appropriately.
-                // fatalError() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
                 let nsError = error as NSError
                 fatalError("Unresolved error \(nsError), \(nsError.userInfo)")
             }
         }
+    }
+
+    func deleteLibrary(_ library: Library){
+        viewContext.delete(library)
+            do {
+                try viewContext.save()
+            } catch {
+                let nsError = error as NSError
+                fatalError("Unresolved error \(nsError), \(nsError.userInfo)")
+            }
     }
 }
 
