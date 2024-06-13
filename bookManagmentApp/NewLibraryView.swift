@@ -34,8 +34,8 @@ struct NewLibraryView: View {
         span: MKCoordinateSpan(latitudeDelta: 0.05, longitudeDelta: 0.05)
     )
 
-    @State private var showToast = false
-    @State private var toastMessage = "jazda"
+    @State private var showAlert = false
+    @State private var message = ""
     
     var body: some View {
         NavigationView {
@@ -67,26 +67,30 @@ struct NewLibraryView: View {
                 .padding()
                 .background(Color.blue)
                 .cornerRadius(8)
-                if showToast {
-                     ToastView(message: toastMessage)
-                         .transition(.opacity)
-                         .onAppear {
-                             DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
-                                 withAnimation {
-                                     showToast = false
-                                 }
-                             }
-                         }
-                        .zIndex(1)
-                 }
             }
             .navigationTitle("Dodaj bibliotekę")
+            .alert(isPresented: $showAlert){
+                Alert(
+                    title: Text(message)
+                )
+            }
         }
         
     }
     
     // don't work
     func saveLibrary() {
+        if name.count < 5 {
+            showAlert = true
+            message = "Nazwa biblioteki powinna miec przynajmniej 5 znakow"
+        }
+        
+        if address.count < 5 {
+            showAlert = true
+            message = "Adres biblioteki powinien miec przynajmniej 5 znakow"
+        }
+        
+        
         // Save library details to Core Data
         library = Library(context: viewContext)
         library.name = name
@@ -94,22 +98,21 @@ struct NewLibraryView: View {
         if let location = selectedLocation?.location {
             library.latitude = location.latitude
             library.longitude = location.longitude
+        } else {
+            showAlert = true
+            message = "Podaj lokalizacje biblioteki"
+        }
+        
+        if showAlert {
+            return
         }
         
         do {
             try viewContext.save()
-            toastMessage = "Added library!"
-            withAnimation{
-                showToast = true
-            }
             presentationMode.wrappedValue.dismiss()
         } catch {
             // Handle the Core Data error here
             print("Failed to save library: \(error.localizedDescription)")
-            toastMessage = "Cannot add library!"
-            withAnimation{
-                showToast = true
-            }
         }
     }
 }

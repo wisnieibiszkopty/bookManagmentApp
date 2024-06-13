@@ -27,6 +27,10 @@ struct BookView: View {
 //                    Text("Delete")
 //                }
 //            }
+            Image(.book)
+                .resizable()
+                .aspectRatio(contentMode: .fit)
+                .clipShape(RoundedRectangle(cornerRadius: 25))
             Text(book.title!)
                 .font(.title)
                 .fontWeight(.bold)
