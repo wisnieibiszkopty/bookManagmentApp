@@ -9,28 +9,51 @@ import SwiftUI
 
 struct ForsenFormView: View {
     @Environment(\.managedObjectContext) private var viewContext
+    @Environment(\.presentationMode) var presentationMode
     @ObservedObject var viewModel = ForsenBookViewModel()
+    
+    @FetchRequest(
+        sortDescriptors: [NSSortDescriptor(keyPath: \Library.name, ascending: true)],
+        animation: .default)
+    private var libraries: FetchedResults<Library>
+    
+    @FetchRequest(
+        sortDescriptors: [NSSortDescriptor(keyPath: \Author.name, ascending: true)],
+        animation: .default)
+    private var authors: FetchedResults<Author>
         
     var body: some View {
         NavigationView {
             Form {
                 Section(header: Text("Informacje o książce")) {
                     TextField("Tytuł", text: $viewModel.title)
-                    TextField("Krótki opis", text: $viewModel.description)
+                    TextField("Gatunek", text: $viewModel.genre)
+                    Picker("Autor", selection: $viewModel.selectedAuthor) {
+                        Text("-").tag(nil as Author?)
+                        ForEach(authors) { author in
+                            Text("\(author.name!) \(author.surname!)").tag(author as Author?)
+                        }
+                    }
                 }
                 
                 Section(header: Text("Szczegóły wypożyczenia")) {
                     DatePicker("Data oddania", selection: $viewModel.returnDate, displayedComponents: .date)
                     
                     Picker("Biblioteka", selection: $viewModel.selectedLibrary) {
-                        ForEach(viewModel.libraries, id: \.self) { library in
-                            Text(library)
+                        Text("-").tag(nil as Library?)
+                        ForEach(libraries) { library in
+                            Text(library.name!).tag(library as Library?)
                         }
                     }
                 }
                 
                 Button(action: {
-                    viewModel.saveBook()
+                    do {
+                        try viewModel.saveBook(context: viewContext)
+                        presentationMode.wrappedValue.dismiss()
+                    } catch {
+
+                    }
                 }) {
                     Text("Zapisz")
                         .foregroundColor(.white)

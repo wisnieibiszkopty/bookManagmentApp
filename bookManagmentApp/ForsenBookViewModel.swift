@@ -10,16 +10,20 @@ import CoreData
 
 class ForsenBookViewModel: ObservableObject {
     @Published var title: String = ""
-    @Published var description: String = ""
+    @Published var genre: String = ""
     @Published var returnDate: Date = Date()
-    @Published var selectedLibrary: String = ""
-    @Published var libraries = ["Biblioteka Miejska", "Biblioteka Uniwersytecka", "Biblioteka Szkolna"]
-    
-    func saveBook(context: NSManagedObjectContext) {
-        let newBook = Book(context: viewContext)
+    @Published var selectedLibrary: Library? = nil
+    @Published var selectedAuthor: Author? = nil
+
+
+    func saveBook(context: NSManagedObjectContext) throws {
+        let newBook = Book(context: context)
         newBook.title = title
-        newBook.genre =
+        newBook.genre = genre
+        newBook.returnDate = returnDate
+        newBook.addToToLibrary(selectedLibrary!)
+        selectedAuthor?.addToToBook(newBook)
         
-        context.save()
+        try context.save()
     }
 }

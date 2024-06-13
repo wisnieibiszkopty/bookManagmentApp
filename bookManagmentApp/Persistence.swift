@@ -22,6 +22,10 @@ struct PersistenceController {
         library.name = "Biblioteka"
         library.address = "SAFInodfsijas"
         
+        let library2 = Library(context: viewContext)
+        library2.name = "Biblioteka2"
+        library2.address = "SAFInodfsijas"
+        
         for _ in 0..<10 {
             let newItem = Book(context: viewContext)
             newItem.title = "janko muzykankt"
