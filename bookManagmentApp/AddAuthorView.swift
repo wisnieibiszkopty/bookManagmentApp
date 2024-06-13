@@ -14,6 +14,9 @@ struct AddAuthorView: View {
     @State private var name: String = ""
     @State private var surname: String = ""
     
+    @State private var showAlert = false
+    @State private var message = ""
+    
     var body: some View {
         NavigationView {
             Form {
@@ -35,9 +38,29 @@ struct AddAuthorView: View {
             }
             .navigationTitle("Dodaj autora")
         }
+        .navigationTitle("Dodaj bibliotekę")
+        .alert(isPresented: $showAlert){
+            Alert(
+                title: Text(message)
+            )
+        }
     }
     
     private func saveAuthor() {
+        if name.count < 5 {
+            showAlert = true
+            message = "Imie autora powinno zawierac przynajmniej 3 znakow"
+        }
+        
+        if surname.count < 5 {
+            showAlert = true
+            message  = "Nazwisko autora powinno zawierac przynajmniej 3 znaki"
+        }
+        
+        if showAlert {
+            return
+        }
+        
         let newAuthor = Author(context: viewContext)
         newAuthor.name = name
         newAuthor.surname = surname

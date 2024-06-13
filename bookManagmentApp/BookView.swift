@@ -49,7 +49,7 @@ struct BookView: View {
                     .foregroundColor(.primary)
             }
 
-            HStack {
+            VStack {
                 Text("Library:")
                     .font(.footnote)
                     .foregroundColor(.secondary)

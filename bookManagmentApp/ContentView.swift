@@ -5,6 +5,8 @@
 //  Created by student on 04/06/2024.
 //
 
+// zanies klucz do 118
+
 import SwiftUI
 import CoreData
 
