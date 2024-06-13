@@ -94,7 +94,6 @@ struct ContentView: View {
                         }),
                         secondaryButton: .cancel(Text("Anuluj"))
                     )
-                    .onDelete(perform: deleteItems)
                 }
             }
             .frame(maxWidth: .infinity, maxHeight: .infinity)

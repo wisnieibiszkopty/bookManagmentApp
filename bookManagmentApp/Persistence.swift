@@ -29,6 +29,8 @@ struct PersistenceController {
         for _ in 0..<10 {
             let newItem = Book(context: viewContext)
             newItem.title = "janko muzykankt"
+            newItem.genre = "ddawdad"
+            newItem.returnDate = Date()
             author.addToToBook(newItem)
             library.addToToBook(newItem)
         }

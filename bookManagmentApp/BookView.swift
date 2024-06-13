@@ -41,10 +41,19 @@ struct BookView: View {
                 .foregroundColor(.secondary)
 
             HStack {
-                Text("Date added:")
+                Text("Data oddania:")
                     .font(.footnote)
                     .foregroundColor(.secondary)
-                Text("June 4, 2024")
+                Text("\(book.returnDate!)")
+                    .font(.footnote)
+                    .foregroundColor(.primary)
+            }
+            
+            HStack {
+                Text("Gatunek:")
+                    .font(.footnote)
+                    .foregroundColor(.secondary)
+                Text(book.genre!)
                     .font(.footnote)
                     .foregroundColor(.primary)
             }
