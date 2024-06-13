@@ -50,14 +50,12 @@ struct AddAuthorView: View {
         if name.count < 5 {
             showAlert = true
             message = "Imie autora powinno zawierac przynajmniej 3 znakow"
+            return
         }
         
         if surname.count < 5 {
             showAlert = true
             message  = "Nazwisko autora powinno zawierac przynajmniej 3 znaki"
-        }
-        
-        if showAlert {
             return
         }
         

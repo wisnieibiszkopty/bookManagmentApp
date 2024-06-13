@@ -83,11 +83,13 @@ struct NewLibraryView: View {
         if name.count < 5 {
             showAlert = true
             message = "Nazwa biblioteki powinna miec przynajmniej 5 znakow"
+            return
         }
         
         if address.count < 5 {
             showAlert = true
             message = "Adres biblioteki powinien miec przynajmniej 5 znakow"
+            return
         }
         
         
@@ -101,9 +103,6 @@ struct NewLibraryView: View {
         } else {
             showAlert = true
             message = "Podaj lokalizacje biblioteki"
-        }
-        
-        if showAlert {
             return
         }
         

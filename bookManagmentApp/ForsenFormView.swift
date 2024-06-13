@@ -22,6 +22,9 @@ struct ForsenFormView: View {
         animation: .default)
     private var authors: FetchedResults<Author>
         
+    @State private var showAlert = false
+    @State private var message: String = ""
+    
     var body: some View {
         NavigationView {
             Form {
@@ -48,12 +51,7 @@ struct ForsenFormView: View {
                 }
                 
                 Button(action: {
-                    do {
-                        try viewModel.saveBook(context: viewContext)
-                        presentationMode.wrappedValue.dismiss()
-                    } catch {
-
-                    }
+                    saveBook()
                 }) {
                     Text("Zapisz")
                         .foregroundColor(.white)
@@ -64,6 +62,45 @@ struct ForsenFormView: View {
                 .cornerRadius(8)
             }
             .navigationTitle("Dodaj książkę")
+        }
+        .navigationTitle("Dodaj bibliotekę")
+        .alert(isPresented: $showAlert){
+            Alert(
+                title: Text(message)
+            )
+        }
+    }
+    
+    func saveBook(){
+        if viewModel.title.count < 3 {
+            showAlert = true
+            message = "Tytuł powinien zawierać przynajmniej 3 znaki"
+            return
+        }
+        
+        if viewModel.genre.count < 3 {
+            showAlert = true
+            message = "Gatunek powinien zawierać przynajmniej 3 znaki"
+            return
+        }
+        
+        if viewModel.selectedAuthor == nil {
+            showAlert = true
+            message = "Autor książki jest wymagany"
+            return
+        }
+        
+        if viewModel.selectedLibrary == nil {
+            showAlert = true
+            message = "Biblioteka jest wymagana"
+            return
+        }
+        
+        do {
+            try viewModel.saveBook(context: viewContext)
+            presentationMode.wrappedValue.dismiss()
+        } catch {
+            fatalError("Canno add book!")
         }
     }
 }
