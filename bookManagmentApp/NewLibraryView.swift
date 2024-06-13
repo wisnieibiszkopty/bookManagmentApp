@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import MapKit
 
 struct IdentifiablePlace: Identifiable {
     let id: UUID

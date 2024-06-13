@@ -18,27 +18,41 @@ struct ContentView: View {
 
     var body: some View {
         NavigationView {
-            List {
-                ForEach(items) { item in
-                    NavigationLink {
-                        BookView(book: item)
+            VStack{
+                HStack{
+                    NavigationLink{
+                        ForsenFormView()
                     } label: {
-                        Text(item.title!)
+                        Text("Add book")
+                    }
+                    NavigationLink{
+                        NewLibraryView()
+                    } label: {
+                        Text("Add library")
                     }
                 }
-                .onDelete(perform: deleteItems)
-            }
-            .toolbar {
-                ToolbarItem(placement: .navigationBarTrailing) {
-                    EditButton()
+                List {
+                    ForEach(items) { item in
+                        NavigationLink {
+                            BookView(book: item)
+                        } label: {
+                            Text(item.title!)
+                        }
+                    }
+                    .onDelete(perform: deleteItems)
                 }
-                ToolbarItem {
-                    Button(action: addItem) {
-                        Label("Add Item", systemImage: "plus")
+                .toolbar {
+                    ToolbarItem(placement: .navigationBarTrailing) {
+                        EditButton()
+                    }
+                    ToolbarItem {
+                        Button(action: addItem) {
+                            Label("Add Item", systemImage: "plus")
+                        }
                     }
                 }
+                Text("Select an item")
             }
-            Text("Select an item")
         }
     }
 
